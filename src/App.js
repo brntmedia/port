@@ -1,13 +1,20 @@
-import './App.css';
-import Hero from './components/Hero';
+import React from 'react';
 import Navbar from './components/Navbar';
+import Home from './components/pages/Home'
+import './App.css';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 function App() {
   return (
     <div>
-      <Navbar/>
-      <Hero/>
+      <Router>
+        <Navbar/>
+          <Switch>
+            <Route path='/' exact component={Home} /> 
+          </Switch>
+      </Router>
     </div>
   );
 }
